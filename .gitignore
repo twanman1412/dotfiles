@@ -1,12 +1,26 @@
-# Ignore ssh files
-.ssh/
+# Ignore all by default
+*
 
-# Ignore zsh cache files
-.zshrc.zni
-.zcompdump
+# Add .gitignore
+!.gitignore
 
-# Ignore git config
-.gitconfig
+# Add zsh files
+!.zshrc
+!.zprofile
 
-# Ignore home directories (Desktop, Documents, etc.)
-[A-Z]*/
+# Add bash files
+!.bash_logout
+!.bash_profile
+!.bashrc
+
+# Add config files
+!.config
+!.config/**
+
+# Add packages directory
+!.packages
+!.packages/**
+
+# Add fonts directory
+!.local/share/fonts/ttf/caskaydia
+!.local/share/fonts/ttf/caskaydia/**
