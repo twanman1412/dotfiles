@@ -6,3 +6,7 @@ sudo
 zsh
 git
 less
+pipewire
+man-db
+man-pages
+wget
