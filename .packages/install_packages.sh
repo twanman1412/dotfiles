@@ -18,3 +18,14 @@ for file in [0-9][0-9]-*; do
 	sudo pacman -S --noconfirm --needed $pkgs
 done
 
+sudo pacman -S --noconfirm --needed flatpak
+
+echo "Installing flatpak packages"
+fpkgs=$(tr '\n' ' ' < flatpak_packages)
+if [ -z "$fpkgs" ]; then
+	echo "	File is empty, skipping."
+else
+	echo "	Running: flatpak install -y $fpkgs"
+	sudo flatpak install -y $fpkgs
+fi
+
