@@ -1,4 +1,12 @@
-.ssh
+# Ignore ssh files
+.ssh/
+
+# Ignore zsh cache files
 .zshrc.zni
 .zcompdump
+
+# Ignore git config
 .gitconfig
+
+# Ignore home directories (Desktop, Documents, etc.)
+[A-Z]*/
