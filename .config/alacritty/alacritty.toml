@@ -1,0 +1,26 @@
+[general]
+working_directory = "$HOME"
+
+[window]
+padding = { x = 5, y = 5 }
+decorations = "None"
+opacity = 0.5
+blur = false
+
+[scrolling]
+history = 100000
+
+[font]
+size = 12
+
+normal = { family = "CaskaydiaMonoNerdFontMono", style = "Regular" }
+bold = { family = "CaskaydiaMonoNerdFontMono", style = "Bold" }
+italic = { family = "CaskaydiaMonoNerdFontMono", style = "Italic" }
+bold_italic = { family = "CaskaydiaMonoNerdFontMono", style = "Bold Italic" }
+
+[terminal]
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = true
+
