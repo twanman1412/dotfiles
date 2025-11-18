@@ -22,3 +22,5 @@ cmake
 gcc
 pkgconf
 xdg-user-dirs
+npm
+
