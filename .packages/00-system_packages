@@ -7,6 +7,10 @@ zsh
 git
 less
 pipewire
+pipewire-pulse
+pipewire-alsa
+pipewire-jack
+wireplumber
 man-db
 man-pages
 wget
