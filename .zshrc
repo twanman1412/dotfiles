@@ -37,3 +37,5 @@ prompt mytheme
 alias zen='flatpak run app.zen_browser.zen'
 alias bitwarden='flatpak run com.bitwarden.desktop'
 alias spotify='flatpak run com.spotify.Client'
+
+export EDITOR='nvim'
