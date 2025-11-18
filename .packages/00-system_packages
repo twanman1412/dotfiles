@@ -14,3 +14,10 @@ wireplumber
 man-db
 man-pages
 wget
+debugedit
+fakeroot
+go
+make
+cmake
+gcc
+pkgconf
