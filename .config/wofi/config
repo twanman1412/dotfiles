@@ -1,0 +1,11 @@
+show=drun
+prompt=
+columns=1
+width=600
+height=500
+padding=10
+allow_images=true
+term=alacritty
+hide_scroll=true
+always_parse_args=true
+insensitive=true
