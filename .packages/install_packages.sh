@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 echo "Updating repositories"
 sudo pacman -Syu --noconfirm
@@ -31,7 +32,7 @@ else
 fi
 
 echo "Installing yay"
-sudo pacman -U --noconfirm --needed yay-12.5.2-2-x86_64.pkg.tar.zst
+sh yay.sh
 
 echo "Updating yay repositories"
 yay -Syu
