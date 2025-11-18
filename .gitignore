@@ -17,6 +17,12 @@
 !.config
 !.config/**
 
+.config/github-copilot/
+.config/dconf/
+.config/go/
+.config/mozilla/
+.config/pulse/
+
 # Add packages directory
 !.packages
 !.packages/**
