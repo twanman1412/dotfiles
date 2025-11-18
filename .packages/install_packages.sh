@@ -46,3 +46,5 @@ else
 	yay -S --noconfirm --needed $ypkgs
 fi
 
+echo "Installing docker and docker desktop"
+sh docker.sh
