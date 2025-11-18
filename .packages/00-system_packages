@@ -21,3 +21,4 @@ make
 cmake
 gcc
 pkgconf
+xdg-user-dirs
