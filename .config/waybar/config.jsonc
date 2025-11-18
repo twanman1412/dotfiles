@@ -1,0 +1,27 @@
+{
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "9": "",
+      "10": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4, 5],
+      "DP-3": [6, 7, 8, 9, 10]
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %B %d, %Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}

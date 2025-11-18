@@ -1,0 +1,98 @@
+/* Base Bar */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.7);
+  color: #d0f0e0;
+}
+
+/* Workspaces */
+#workspaces {
+  padding: 0 10px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: #a0f0a0;
+  background: transparent;
+  border-radius: 5px;
+  margin: 2px 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: rgba(192, 132, 252, 0.2); /* Soft purple */
+  color: #C084FC;
+}
+
+#workspaces button.active {
+  background: #00FF9F;
+  color: #0d0d0d;
+  font-weight: bold;
+}
+
+/* Center Clock */
+#clock {
+  color: #C084FC;
+  padding: 0 12px;
+}
+
+/* Battery */
+#battery {
+  padding: 0 10px;
+  color: #a0f0ff;
+  transition: all 0.2s ease-in-out;
+  min-width: 24px;
+}
+
+#battery:hover {
+  background: rgba(160, 240, 255, 0.1);
+  border-radius: 5px;
+}
+
+#battery.charging {
+  color: #00FF9F;
+}
+
+#battery.warning {
+  color: #FFB347;
+}
+
+#battery.critical {
+  color: #FF6B6B;
+  animation: blink 1s infinite;
+}
+
+/* Backlight */
+#backlight {
+  padding: 0 10px;
+  color: #c0ffee;
+  transition: all 0.2s ease-in-out;
+  min-width: 24px;
+}
+
+#backlight:hover {
+  background: rgba(192, 255, 238, 0.1);
+  border-radius: 5px;
+}
+
+/* Tooltips */
+tooltip {
+  background: rgba(20, 20, 20, 0.9);
+  color: #e0e0e0;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* Optional separator */
+#custom-separator {
+  color: #555;
+  padding: 0 5px;
+}
+
