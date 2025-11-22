@@ -22,6 +22,7 @@
 .config/go/
 .config/mozilla/
 .config/pulse/
+.config/Docker\ Desktop/
 
 # Add packages directory
 !.packages
