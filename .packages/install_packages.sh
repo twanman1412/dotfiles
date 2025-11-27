@@ -35,7 +35,7 @@ echo "Installing yay"
 sh yay.sh
 
 echo "Updating yay repositories"
-yay -Syu
+yay -Syu --noconfirm
 
 echo "Installing yay packages"
 ypkgs=$(tr '\n' ' ' < yay_packages)
