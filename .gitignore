@@ -23,6 +23,11 @@
 .config/mozilla/
 .config/pulse/
 .config/Docker\ Desktop/
+.config/QtProject.conf
+.config/htop/
+.config/libfm/
+.config/okularpartrc
+.config/okularrc
 
 # Add packages directory
 !.packages
