@@ -8,7 +8,7 @@ return {
 		vim.o.foldcolumn = '1'
 
 		-- Set fold level
-		local foldlevel = 7
+		local foldlevel = 99
 		vim.o.foldlevel = foldlevel
 		vim.o.foldlevelstart = foldlevel
 
