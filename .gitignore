@@ -28,6 +28,9 @@
 .config/libfm/
 .config/okularpartrc
 .config/okularrc
+.config/Arduino IDE/
+.config/arduino-ide/
+.config/chromium/
 
 # Add packages directory
 !.packages
