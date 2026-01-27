@@ -1,0 +1,11 @@
+[Added Associations]
+application/pdf=org.kde.okular.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-GPPVJ3.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-GPPVJ3.desktop;
+
+[Default Applications]
+application/pdf=org.kde.okular.desktop
+text/plain=nvim.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-GPPVJ3.desktop
+message/rfc822=userapp-Thunderbird-GPPVJ3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-GPPVJ3.desktop
