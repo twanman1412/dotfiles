@@ -31,6 +31,9 @@
 .config/Arduino IDE/
 .config/arduino-ide/
 .config/chromium/
+.config/Discord/
+.config/discord/
+.config/libreoffice/
 
 # Add packages directory
 !.packages
