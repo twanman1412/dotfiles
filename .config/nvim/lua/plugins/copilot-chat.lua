@@ -22,20 +22,7 @@ return {
 
 			separator = '━━',
 			auto_fold = true, -- Automatically folds non-assistant messages
-			prompts = {
-				MyCustomPrompt = {
-					prompt = 'Explain how it works.',
-					system_prompt = 'You are very good at explaining stuff',
-					mapping = '<leader>ccmc',
-					description = 'My custom prompt description',
-				},
-				Yarrr = {
-					system_prompt = 'You are fascinated by pirates, so please respond in pirate speak.',
-				},
-				NiceInstructions = {
-					system_prompt = 'You are a nice coding tutor, so please respond in a friendly and helpful manner.',
-				}
-			}
+			prompts = {}
 		},
 		config = function()
 			local copilot_chat = require('CopilotChat')
@@ -43,9 +30,15 @@ return {
 			vim.api.nvim_create_autocmd('BufEnter', {
 				pattern = 'copilot-*',
 				callback = function()
+
+					-- Enable markdown syntax highlighting
+					vim.cmd('setlocal filetype=markdown')
+
 					vim.opt_local.relativenumber = false
 					vim.opt_local.number = false
 					vim.opt_local.conceallevel = 0
+
+					vim.keymap.set('n', '<C-l>', '<C-w>l', { buffer = true, desc = 'Move to Right Window' })
 
 					vim.keymap.set('n', 'q', function()
 						copilot_chat.stop()
@@ -60,6 +53,8 @@ return {
 					end, { buffer = true, desc = 'Restart Copilot Chat' })
 				end,
 			})
+
+			vim.keymap.set('n', '<C-l>', '<C-w>l', { buffer = true, desc = 'Move to Right Window' })
 
 			vim.keymap.set('n', '<leader>ccc', function()
 				copilot_chat.open()
