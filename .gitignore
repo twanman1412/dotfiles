@@ -40,5 +40,5 @@
 !.packages/**
 
 # Add fonts directory
-!.local/share/fonts/ttf/caskaydia
-!.local/share/fonts/ttf/caskaydia/**
+!.local/share/fonts/ttf/caskaydiaCove
+!.local/share/fonts/ttf/caskaydiaCove/*
