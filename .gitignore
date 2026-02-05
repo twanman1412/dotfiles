@@ -35,6 +35,7 @@
 .config/discord/
 .config/libreoffice/
 .config/exercism/
+.config/nvm/
 
 # Add packages directory
 !.packages
