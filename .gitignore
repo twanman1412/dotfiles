@@ -38,9 +38,14 @@
 .config/nvm/
 
 # Add packages directory
-!.packages
+!.packages/
 !.packages/**
 
 # Add fonts directory
 !.fonts/
 !.fonts/**
+
+# Add ssh config
+!.ssh/
+.ssh/*
+!.ssh/config
