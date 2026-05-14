@@ -36,6 +36,7 @@
 .config/libreoffice/
 .config/exercism/
 .config/nvm/
+.config/mimeapps.list
 
 # Add packages directory
 !.packages/
