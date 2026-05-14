@@ -18,7 +18,7 @@ map("v", "p", "\"_dP", "Paste without copying")
 
 -- Splits management
 map("n", "<leader>vs", "<C-w>v", "Vertical split")
-map("n", "<leader>hs", "<C-w>h", "Horizontal split")
+map("n", "<leader>hs", "<C-w>s", "Horizontal split")
 map("n", "<leader>xs", ":close<CR>", "Close split")
 
 map("n", "<C-j>", "<C-w>j", "Move to split below")
