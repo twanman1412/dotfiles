@@ -6,6 +6,16 @@ htop
 arduino-cli
 xournalpp
 docker
+docker-compose
+docker-buildx
 chromium
-libreoffice
+libreoffice-fresh
 discord
+dbeaver
+openvpn
+python-django
+python-eduvpn-client
+python-pipx
+redis-cli
+signal-desktop
+tmux
