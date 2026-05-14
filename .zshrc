@@ -44,3 +44,6 @@ alias grep='grep --color=auto'
 export EDITOR='nvim'
 
 source /usr/share/nvm/init-nvm.sh
+
+export PATH=/home/twan/.local/bin:$PATH
+export PATH=/home/twan/.opencode/bin:$PATH
