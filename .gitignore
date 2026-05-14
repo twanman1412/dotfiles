@@ -50,3 +50,6 @@
 !.ssh/
 .ssh/*
 !.ssh/config
+
+# Ignore temporary directories
+**/tmp/
