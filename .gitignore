@@ -36,6 +36,18 @@
 .config/libreoffice/
 .config/exercism/
 .config/nvm/
+.config/Code\ -\ OSS/
+.config/Code/
+.config/Discord\ Key\ Storage/
+.config/Postman/
+.config/Signal
+.config/act/
+.config/create-next-app-nodejs/
+.config/crossnote/
+.config/eduvpn/
+.config/nextjs-nodejs/
+.config/pypoetry/
+.config/xournalpp/
 .config/mimeapps.list
 
 # Add packages directory
