@@ -2,3 +2,6 @@ pwvucontrol
 luajit-tiktoken-bin
 hyprqt6engine
 postman-bin
+playwright
+redis-cli
+python-eduvpn-client

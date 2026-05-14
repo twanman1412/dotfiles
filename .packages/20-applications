@@ -14,8 +14,6 @@ discord
 dbeaver
 openvpn
 python-django
-python-eduvpn-client
 python-pipx
-redis-cli
 signal-desktop
 tmux

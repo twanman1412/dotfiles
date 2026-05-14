@@ -37,7 +37,6 @@ flex
 lldb
 llvm
 networkmanager
-playwright
 postgresql
 pre-commit
 protobuf
