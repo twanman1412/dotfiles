@@ -5,3 +5,5 @@ vim.o.tabstop = 4
 -- Set line numbers
 vim.o.number = true
 vim.o.relativenumber = true
+
+vim.opt.laststatus = 3
