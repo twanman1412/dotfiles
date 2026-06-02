@@ -1,0 +1,34 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"provider": {},
+	"model": "github-copilot/gpt-5.2-codex",
+	"small_model": "github-copilot/claude-haiku-4.5",
+	"shell": "zsh",
+	"command": {
+		"commit-changes": {
+			"template": "Generate a concise and informative commit message based on the output of `git diff --staged`. Use semantic git tags (e.g., feat, fix, test, docs, refactor) to categorize the commit. Ensure the message is clear and follows best practices for commit messages. Commit the changes with the generated message.",
+			"description": "Commit staged changes with an AI-generated message",
+			"agent": "build",
+			"model": "github-copilot/claude-haiku-4.5",
+			"subtask": true
+		}
+	},
+	"formatter": true,
+	"lsp": true,
+	"permission": {
+		"bash": "ask"
+	},
+	"watcher": {
+		"ignore": [
+			"**/node_modules/**",
+			"**/dist/**",
+			"**/build/**",
+			"**/.git/**",
+			"**/__pycache__/**"
+		]
+	},
+	"plugin": [
+		"superpowers@git+https://github.com/obra/superpowers.git"
+	],
+	"enabled_providers": ["github-copilot", "google"]
+}
