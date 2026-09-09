@@ -1,4 +1,4 @@
-alacritty
+kitty
 pcmanfm
 thunderbird
 okular
@@ -18,3 +18,6 @@ python-pipx
 signal-desktop
 tmux
 opencode
+rofi
+swaync
+woeusb-ng

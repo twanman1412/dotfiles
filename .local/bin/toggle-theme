@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+
+# Ensure Hyprland IPC socket is discoverable
+if [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
+    export HYPRLAND_INSTANCE_SIGNATURE=$(ls -td "$XDG_RUNTIME_DIR/hypr/"* 2>/dev/null | head -n 1 | xargs -r basename)
+fi
+
+STATE_FILE="$HOME/.cache/current_theme"
+CURRENT=$(cat "$STATE_FILE" 2>/dev/null || echo "dark")
+
+DARK_WALL="$HOME/.config/hypr/assets/rose-pine-moon-wallpaper.jpeg"
+LIGHT_WALL="$HOME/.config/hypr/assets/rose-pine-dawn-wallpaper.jpeg"
+
+set_wallpaper() {
+    local target="$1"
+
+    hyprctl hyprpaper preload "$target"
+    
+    # Assign to monitors (no trailing spaces after commas)
+    hyprctl hyprpaper wallpaper "DP-1,$target"
+    hyprctl hyprpaper wallpaper "DP-3,$target"
+}
+
+set_kitty_colors() {
+    local config_path="$1"
+
+    # 1. Update fallback symlink for any new Kitty instances
+    ln -sf "$config_path" "$HOME/.config/kitty/theme.conf"
+
+    # 2. Broadcast color change to all active Kitty sockets
+    for sock in /tmp/kitty*; do
+        if [ -S "$sock" ]; then
+            kitten @ --to "unix:$sock" set-colors --all "$config_path" 2>/dev/null || true
+        fi
+    done
+}
+
+apply_dark() {
+    echo "dark" > "$STATE_FILE"
+
+    # 1. Hyprpaper Wallpaper
+    set_wallpaper "$DARK_WALL"
+
+    # 2. GTK / Flatpak / Web Browsers
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+    # 3. SwayNC Theme
+    ln -sf "$HOME/.config/swaync/theme-dark.css" "$HOME/.config/swaync/theme.css"
+    swaync-client -rs
+
+    # 4. Rofi Theme
+    ln -sf "$HOME/.config/rofi/rose-pine.rasi" "$HOME/.config/rofi/theme.rasi"
+
+    # 5. Hyprland Borders
+    hyprctl keyword general:col.active_border "rgba(ebbcbaff) rgba(c4a7e7ff) 45deg"
+    hyprctl keyword general:col.inactive_border "rgba(6e6a86aa)"
+
+    # 6. Terminal Colors
+    set_kitty_colors "$HOME/.config/kitty/rose-pine.conf"
+
+    # 7. Set environment variables for bat and fzf
+    cat << 'EOF' > "$HOME/.cache/theme-env"
+export BAT_THEME="base16"
+export FZF_DEFAULT_OPTS="--color=bg+:#26233a,bg:#191724,spinner:#ebbcba,hl:#eb6f92,fg:#e0def4,header:#eb6f92,info:#c4a7e7,pointer:#ebbcba,marker:#ebbcba,fg+:#e0def4,prompt:#c4a7e7,hl+:#eb6f92"
+EOF
+
+    # 8. Waybar Theme
+    ln -sf "$HOME/.config/waybar/rose-pine.css" "$HOME/.config/waybar/theme.css"
+    killall -SIGUSR2 waybar
+}
+
+apply_light() {
+    echo "light" > "$STATE_FILE"
+
+    # 1. Hyprpaper Wallpaper
+    set_wallpaper "$LIGHT_WALL"
+
+    # 2. GTK / Flatpak / Web Browsers
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+
+    # 3. SwayNC Theme
+    ln -sf "$HOME/.config/swaync/theme-dawn.css" "$HOME/.config/swaync/theme.css"
+    swaync-client -rs
+
+    # 4. Rofi Theme
+    ln -sf "$HOME/.config/rofi/rose-pine-dawn.rasi" "$HOME/.config/rofi/theme.rasi"
+
+    # 5. Hyprland Borders
+    hyprctl keyword general:col.active_border "rgba(d7827eff) rgba(907aa9ff) 45deg"
+    hyprctl keyword general:col.inactive_border "rgba(9893a5aa)"
+
+    # 6. Terminal Colors
+    set_kitty_colors "$HOME/.config/kitty/rose-pine-dawn.conf"
+
+    # 7. Set environment variables for bat and fzf
+    cat << 'EOF' > "$HOME/.cache/theme-env"
+export BAT_THEME="base16-256"
+export FZF_DEFAULT_OPTS="--color=bg+:#f2e9e1,bg:#faf4ed,spinner:#d7827e,hl:#b4637a,fg:#575279,header:#b4637a,info:#907aa9,pointer:#d7827e,marker:#d7827e,fg+:#575279,prompt:#907aa9,hl+:#b4637a"
+EOF
+
+    # 8. Waybar Theme
+    ln -sf "$HOME/.config/waybar/rose-pine-dawn.css" "$HOME/.config/waybar/theme.css"
+    killall -SIGUSR2 waybar
+}
+
+if [ "$CURRENT" = "dark" ]; then
+    apply_light
+else
+    apply_dark
+fi

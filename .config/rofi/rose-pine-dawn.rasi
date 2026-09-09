@@ -1,0 +1,88 @@
+* {
+    base:           #faf4ed;
+    surface:        #fffaf3;
+    overlay:        #f2e9e1;
+    muted:          #9893a5;
+    subtle:         #797593;
+    text:           #575279;
+    love:           #b4637a;
+    gold:           #ea9d34;
+    rose:           #d7827e;
+    pine:           #286983;
+    foam:           #56949f;
+    iris:           #907aa9;
+
+    background-color: transparent;
+    text-color:       @text;
+    padding:          0px;
+    spacing:          0px;
+}
+
+window {
+    background-color: rgba(25, 23, 36, 0.90);
+    border:           1px;
+    border-color:     rgba(110, 106, 134, 0.4);
+    border-radius:    4px;
+    width:            520px;
+    padding:          14px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  10px;
+}
+
+inputbar {
+    background-color: rgba(31, 29, 46, 0.85);
+    border:           1px;
+    border-color:     rgba(110, 106, 134, 0.3);
+    border-radius:    4px;
+    padding:          8px 12px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color:  @rose;
+    font-weight: bold;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @muted;
+    text-color:        @text;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    fixed-height: false;
+    spacing:      4px;
+}
+
+element {
+    padding:       7px 10px;
+    border-radius: 3px;
+    spacing:       10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @text;
+}
+
+element selected.normal {
+    background-color: rgba(235, 188, 186, 0.15); /* Subdued Rose tint */
+    border:           1px;
+    border-color:     rgba(235, 188, 186, 0.4);
+    text-color:       @rose;
+}
+
+element-icon {
+    size: 20px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}

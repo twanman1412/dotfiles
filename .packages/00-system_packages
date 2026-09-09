@@ -43,3 +43,15 @@ protobuf
 protobuf-c
 tree
 wmctrl
+bat
+brightnessctl
+cliphist
+eza
+fastfetch
+fzf
+perf
+starship
+zoxide
+zsh-autosuggestions
+zsh-syntax-highlighting
+uv

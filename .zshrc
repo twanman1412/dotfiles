@@ -1,49 +1,57 @@
+# History settings
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+setopt SHARE_HISTORY
 
-# The following lines were added by compinstall
+# Directory navigation options
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
 
-zstyle ':completion:*' completer _expand _complete _ignored _correct
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
-zstyle ':completion:*' menu select=0
-zstyle ':completion:*' original true
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/twan/.zshrc'
+# Completion system
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+compinit -d "$HOME/.cache/zcompdump-$ZSH_VERSION"
 
-autoload -Uz compinit 
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd
-unsetopt beep
-bindkey -v
-# End of lines configured by zsh-newuser-install
+# Modern CLI replacement aliases
+if command -v eza &>/dev/null; then
+    alias ls='eza --icons=auto --group-directories-first'
+    alias ll='eza -la --icons=auto --group-directories-first --git'
+    alias tree='eza --tree --icons=auto'
+fi
 
-autoload -Uz promptinit
-promptinit
+if command -v bat &>/dev/null; then
+    alias cat='bat --paging=never --style=plain'
+fi
 
-prompt_mytheme_setup() {
-	PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f > '
-	RPROMPT='[%F{yellow}%?%f]'
-}
+# Zoxide (smarter cd) initialization
+if command -v zoxide &>/dev/null; then
+    eval "$(zoxide init zsh)"
+fi
 
-prompt_themes+=( mytheme )
+# FZF integration (default arch path)
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+fi
 
-prompt mytheme
+# Source fast plugins (Arch pacman paths)
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-alias zen='flatpak run app.zen_browser.zen'
-alias bitwarden='flatpak run com.bitwarden.desktop'
-alias spotify='flatpak run com.spotify.Client'
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+[ -f "$HOME/.cache/theme-env" ] && source "$HOME/.cache/theme-env"
 
-export EDITOR='nvim'
-
-source /usr/share/nvm/init-nvm.sh
-
-export PATH=/home/twan/.local/bin:$PATH
-export PATH=/home/twan/.opencode/bin:$PATH
+# Initialize Starship prompt
+eval "$(starship init zsh)"

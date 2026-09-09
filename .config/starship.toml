@@ -1,0 +1,29 @@
+add_newline = false
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character"""
+
+[directory]
+style = "bold #ebbcba" # rose
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+style = "#c4a7e7" # iris
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "#eb6f92" # love
+format = "([$all_status$ahead_behind]($style) )"
+
+[character]
+success_symbol = "[❯](#9ccfd8)" # foam
+error_symbol = "[❯](#eb6f92)"   # love
+
+[cmd_duration]
+min_time = 2_000
+style = "#f6c177" # gold
+format = "took [$duration]($style) "

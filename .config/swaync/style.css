@@ -1,0 +1,165 @@
+/* Rosé Pine Theme */
+@import url("theme.css");
+
+* {
+    font-family: "CaskaydiaCove Nerd Font", "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+}
+
+/* --- Control Center Container --- */
+.control-center {
+    background: alpha(@base, 0.90);
+    border: 1px solid alpha(@muted, 0.4);
+    border-radius: 4px;
+    padding: 14px;
+    color: @text;
+}
+
+/* Control Center Header */
+.widget-title {
+    color: @iris;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.widget-title > button {
+    background: alpha(@surface, 0.8);
+    color: @subtle;
+    border: 1px solid alpha(@muted, 0.3);
+    border-radius: 3px;
+    padding: 3px 8px;
+}
+
+.widget-title > button:hover {
+    background: alpha(@overlay, 0.9);
+    color: @rose;
+    border-color: @rose;
+}
+
+/* Do Not Disturb Toggle */
+.widget-dnd {
+    background: alpha(@surface, 0.85);
+    border: 1px solid alpha(@muted, 0.3);
+    border-radius: 4px;
+    margin: 8px 0;
+    padding: 6px 12px;
+    color: @text;
+}
+
+.widget-dnd > switch {
+    background: alpha(@overlay, 0.9);
+    border-radius: 12px;
+}
+
+.widget-dnd > switch:checked {
+    background: @rose;
+}
+
+/* Sliders (Volume & Brightness) */
+.widget-volume,
+.widget-backlight {
+    background: alpha(@surface, 0.85);
+    border: 1px solid alpha(@muted, 0.3);
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin: 4px 0;
+}
+
+.widget-volume > label,
+.widget-backlight > label {
+    font-size: 15px;
+    color: @gold;
+    margin-right: 8px;
+}
+
+scale trough {
+    background: alpha(@overlay, 0.8);
+    border-radius: 3px;
+    min-height: 5px;
+}
+
+scale highlight {
+    background: @rose;
+    border-radius: 3px;
+}
+
+/* MPRIS Media Player */
+.widget-mpris {
+    background: alpha(@surface, 0.85);
+    border: 1px solid alpha(@muted, 0.3);
+    border-radius: 4px;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    color: @foam;
+}
+
+.widget-mpris-subtitle {
+    color: @subtle;
+    font-size: 11px;
+}
+
+.widget-mpris-player > button {
+    color: @text;
+}
+
+.widget-mpris-player > button:hover {
+    color: @rose;
+}
+
+/* --- Notification Popups & Cards --- */
+.notification-row {
+    outline: none;
+    margin: 4px 0;
+}
+
+.notification {
+    background: alpha(@surface, 0.92);
+    border: 1px solid alpha(@muted, 0.4);
+    border-radius: 4px;
+    padding: 10px;
+    color: @text;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: alpha(@overlay, 0.9);
+}
+
+.notification.critical {
+    border: 1px solid @love;
+}
+
+.notification.warning {
+    border: 1px solid @gold;
+}
+
+.summary {
+    font-weight: bold;
+    color: @rose;
+}
+
+.body {
+    color: @text;
+    font-size: 12px;
+}
+
+.time {
+    color: @muted;
+    font-size: 10px;
+}
+
+.close-button {
+    background: transparent;
+    color: @subtle;
+    border-radius: 3px;
+}
+
+.close-button:hover {
+    background: alpha(@love, 0.2);
+    color: @love;
+}
