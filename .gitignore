@@ -63,5 +63,8 @@
 .ssh/*
 !.ssh/config
 
+# Add local bin directory
+!.local/bin/
+
 # Ignore temporary directories
 **/tmp/

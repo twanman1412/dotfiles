@@ -1,0 +1,25 @@
+* {
+    /* Solid Base Colors */
+    bg-base:          #faf4ed;
+    bg-surface:       #fffaf3;
+    bg-overlay:       #f2e9e1;
+
+    fg-text:          #575279;
+    fg-subtle:        #797593;
+    fg-muted:         #9893a5;
+
+    accent-rose:      #d7827e;
+    accent-love:      #b4637a;
+    accent-gold:      #ea9d34;
+    accent-pine:      #286983;
+    accent-foam:      #56949f;
+    accent-iris:      #907aa9;
+
+    /* Alpha / Translucent Variants (#RRGGBBAA) */
+    bg-window:        #faf4edea;  /* ~92% opacity */
+    bg-inputbar:      #fffaf3e6;  /* ~90% opacity */
+    border-muted:     #9893a559;  /* ~35% opacity */
+    border-subtle:    #9893a540;  /* ~25% opacity */
+    selected-bg:      #d7827e26;  /* ~15% opacity */
+    selected-border:  #d7827e73;  /* ~45% opacity */
+}

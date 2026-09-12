@@ -46,11 +46,11 @@ apply_dark() {
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
     # 3. SwayNC Theme
-    ln -sf "$HOME/.config/swaync/theme-dark.css" "$HOME/.config/swaync/theme.css"
+    ln -sf "$HOME/.config/swaync/rose-pine.css" "$HOME/.config/swaync/theme.css"
     swaync-client -rs
 
     # 4. Rofi Theme
-    ln -sf "$HOME/.config/rofi/rose-pine.rasi" "$HOME/.config/rofi/theme.rasi"
+	sed -i 's|^@theme.*|@theme "/home/twan/.config/rofi/themes/rose-pine.rasi"|' ~/.config/rofi/config.rasi
 
     # 5. Hyprland Borders
     hyprctl keyword general:col.active_border "rgba(ebbcbaff) rgba(c4a7e7ff) 45deg"
@@ -81,11 +81,11 @@ apply_light() {
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 
     # 3. SwayNC Theme
-    ln -sf "$HOME/.config/swaync/theme-dawn.css" "$HOME/.config/swaync/theme.css"
+    ln -sf "$HOME/.config/swaync/rose-pine-dawn.css" "$HOME/.config/swaync/theme.css"
     swaync-client -rs
 
     # 4. Rofi Theme
-    ln -sf "$HOME/.config/rofi/rose-pine-dawn.rasi" "$HOME/.config/rofi/theme.rasi"
+	sed -i 's|^@theme.*|@theme "/home/twan/.config/rofi/themes/rose-pine-dawn.rasi"|' ~/.config/rofi/config.rasi
 
     # 5. Hyprland Borders
     hyprctl keyword general:col.active_border "rgba(d7827eff) rgba(907aa9ff) 45deg"

@@ -8,4 +8,82 @@ configuration {
     font: "CaskaydiaCove Nerd Font 10";
 }
 
-@theme "~/.config/rofi/theme.rasi"
+/* Import symlinked theme */
+@theme "/home/twan/.config/rofi/themes/rose-pine.rasi"
+
+* {
+    background-color: transparent;
+    text-color:       @fg-text;
+    margin:           0px;
+    padding:          0px;
+    spacing:          0px;
+}
+
+window {
+    background-color: @bg-window;
+    border:           1px;
+    border-color:     @border-muted;
+    border-radius:    4px;
+    width:            520px;
+    padding:          14px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  10px;
+}
+
+inputbar {
+    background-color: @bg-inputbar;
+    border:           1px;
+    border-color:     @border-subtle;
+    border-radius:    4px;
+    padding:          8px 12px;
+    spacing:          10px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    text-color:  @accent-rose;
+    font-weight: bold;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @fg-muted;
+    text-color:        @fg-text;
+}
+
+listview {
+    lines:        8;
+    columns:      1;
+    fixed-height: false;
+    spacing:      4px;
+}
+
+element {
+    padding:       7px 10px;
+    border-radius: 3px;
+    spacing:       10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:       @fg-text;
+}
+
+element selected.normal {
+    background-color: @selected-bg;
+    border:           1px;
+    border-color:     @selected-border;
+    text-color:       @accent-rose;
+}
+
+element-icon {
+    size: 20px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color:     inherit;
+}
