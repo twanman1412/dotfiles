@@ -59,6 +59,9 @@ hl.on("hyprland.start", function()
 
     -- Status Bar
     hl.exec_cmd("waybar")
+
+	-- Theme toggler
+	hl.exec_cmd("$HOME/.local/bin/toggle-theme")
 end)
 
 -------------------------------
