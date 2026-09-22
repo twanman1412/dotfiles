@@ -47,6 +47,10 @@
     color: @text;
 }
 
+.widget-dnd > label {
+    color: @text;
+}
+
 .widget-dnd > switch {
     background: alpha(@overlay, 0.9);
     border-radius: 12px;
