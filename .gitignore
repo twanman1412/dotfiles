@@ -68,3 +68,8 @@
 
 # Ignore temporary directories
 **/tmp/
+
+# Theme symlinks
+.config/kitty/theme.conf
+.config/swaync/theme.css
+.config/waybar/theme.css
