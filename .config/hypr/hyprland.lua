@@ -61,7 +61,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
 
 	-- Theme toggler
-	hl.exec_cmd("$HOME/.local/bin/toggle-theme")
+	hl.exec_cmd("$HOME/.local/bin/apply-theme")
 end)
 
 -------------------------------
@@ -299,18 +299,6 @@ hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left"  }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up"    }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down"  }))
-
--- Resize (fine)
-hl.bind("ALT + H", hl.dsp.window.resize({ x = -10, y = 0   }), { repeating = true })
-hl.bind("ALT + L", hl.dsp.window.resize({ x =  10, y = 0   }), { repeating = true })
-hl.bind("ALT + K", hl.dsp.window.resize({ x = 0,   y = -10 }), { repeating = true })
-hl.bind("ALT + J", hl.dsp.window.resize({ x = 0,   y =  10 }), { repeating = true })
-
--- Resize (coarse)
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -50, y = 0   }), { repeating = true })
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x =  50, y = 0   }), { repeating = true })
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0,   y = -50 }), { repeating = true })
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0,   y =  50 }), { repeating = true })
 
 -- Workspaces: switch and move (1-10, key 0 = workspace 10)
 for i = 1, 10 do
