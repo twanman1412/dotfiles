@@ -55,3 +55,5 @@ fi
 
 # Initialize Starship prompt
 eval "$(starship init zsh)"
+
+export EDITOR="nvim"

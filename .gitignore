@@ -49,6 +49,7 @@
 .config/pypoetry/
 .config/xournalpp/
 .config/mimeapps.list
+.config/nvim/lazy-lock.json
 
 # Add packages directory
 !.packages/
