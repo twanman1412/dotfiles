@@ -1,6 +1,3 @@
--- Hyprland Lua Config
--- Unified Rosé Pine & Modern Wayland Daemon Stack
-
 -----------------------------
 ---- ROSÉ PINE CONSTANTS ----
 -----------------------------
@@ -160,10 +157,6 @@ hl.config({
         enabled = true,
     },
 
-    dwindle = {
-        preserve_split = true,
-    },
-
     master = {
         new_status = "master",
     },
@@ -192,27 +185,16 @@ hl.config({
 ---- LAYER RULES ----
 ---------------------
 
--- Blur surfaces for shell overlays while keeping app windows opaque
 hl.layer_rule({
 	name = "blur-waybar",
 	match = { namespace = "waybar" },
 	blur = true,
 })
--- hl.layer_rule({
--- 	name = "waybar-ignorezero",
--- 	match = { namespace = "waybar" },
--- 	ignorezero = true,
--- })
 hl.layer_rule({
 	name = "rofi-blur",
 	match = { namespace = "rofi" },
 	blur = true,
 })
--- hl.layer_rule({
--- 	name = "rofi-ignorezero",
--- 	match = { namespace = "rofi" },
--- 	ignorezero = true,
--- })
 hl.layer_rule({
 	name = "swaync-control-center-blur",
 	match = { namespace = "swaync-control-center" },
@@ -223,16 +205,16 @@ hl.layer_rule({
 	match = { namespace = "swaync-notification-window" },
 	blur = true,
 })
--- hl.layer_rule({
--- 	name = "swaync-control-center-ignorezero",
--- 	match = { namespace = "swaync-control-center" },
--- 	ignorezero = true,
--- })
--- hl.layer_rule({
--- 	name = "swaync-notification-window-ignorezero",
--- 	match = { namespace = "swaync-notification-window" },
--- 	ignorezero = true,
--- })
+
+----------------------
+---- WINDOW RULES ----
+----------------------
+
+hl.window_rule({
+    name = "suppress-maximize",
+    match = { class = ".*" },
+    suppress_event = "maximize",
+})
 
 --------------------
 ---- ANIMATIONS ----
@@ -292,7 +274,7 @@ hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 -- Window management
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P",         hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + G",         hl.dsp.layout("swapwithmaster"))
+hl.bind(mainMod .. " + G",         hl.dsp.layout("togglesplit"))
 
 -- Focus movement (vim-style)
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left"  }))
